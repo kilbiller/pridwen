@@ -58,5 +58,11 @@ describe('AuthUser', function () {
 
 			expect($user->can('event_management.edit'))->toBe(false);
 		});
+
+		it('should return false when no matching permission if found', function () {
+			$user = Auth::findById(12);
+
+			expect($user->can('can_kill_ponies'))->toBe(false);
+		});
 	});
 });

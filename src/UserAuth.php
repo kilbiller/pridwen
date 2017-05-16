@@ -71,6 +71,12 @@ class UserAuth {
 		return null;
 	}
 
+	/**
+	 * Check if user has requested permission 
+	 *
+	 * @param string $request requested permission
+	 * @return boolean Returns true if user is permitted, false otherwise
+	 */
 	public function can($request) {
 		// Match with closest matching rule possible
 		while (!empty($request)) {
@@ -80,10 +86,12 @@ class UserAuth {
 				return $match['allowed'];
 			}
 
+			// Remove .* at the end to prevent infinite loop
 			if (substr($request, -1) === '*') {
 				$request = substr($request, 0, -2);
 			}
 
+			// Go one level Higher (i.e. posts.create -> posts.*)
 			if (!empty($request)) {
 				$request = explode('.', $request);
 				array_pop($request);

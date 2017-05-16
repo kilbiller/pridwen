@@ -1,0 +1,25 @@
+{
+    "name": "kilbiller/pridwen",
+    "description": "Simple authorization library.",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Rémy Peru",
+            "email": "peru.remy@gmail.com"
+        }
+    ],
+    "require": {
+		"php": ">=7.0"
+	},
+	"require-dev": {
+		"kahlan/kahlan": "^3.1"
+	},
+	"autoload": {
+        "psr-4": {"Pridwen\\": "src/"}
+	},
+	"scripts": {
+		"test": "kahlan",
+		"test:coverage": "kahlan --coverage=4 --clover=clover.xml"
+	}
+}

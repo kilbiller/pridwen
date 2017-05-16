@@ -10,13 +10,15 @@ describe('AuthUser', function () {
 					'ticketing.*' => true,
 					'ticketing.view' => true,
 					'ticketing.create' => true,
-					'ticketing.edit' => true
+					'ticketing.edit' => true,
+					'event_management.*' => true 
 				]
 			],
 			'users' => [
 				'12' => [
 					'ticketing.create' => false,
-					'ticketing.edit' => true
+					'ticketing.edit' => true,
+					'event_management.*' => false 
 				]
 			]
 		]);
@@ -49,6 +51,12 @@ describe('AuthUser', function () {
 			$user = Auth::findById(12);
 
 			expect($user->can('ticketing.test'))->toBe(true);
+		});
+
+		it('should return false when parent permission is enabled on one of the user roles but disabled on the user himself', function () {
+			$user = Auth::findById(12);
+
+			expect($user->can('event_management.edit'))->toBe(false);
 		});
 	});
 });

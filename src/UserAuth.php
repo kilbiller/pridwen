@@ -45,30 +45,49 @@ class UserAuth {
 		return $result;
 	}
 
-	public function can($requestedPermissionName) {
-		// User permissions
+	private function __findMatch($request) {
+		// Try to match with user permissions first
 		$permissions = filter(function ($permission) {
 			return $permission['role'] === null;
 		}, $this->permissions);
 
 		foreach ($permissions as $permission) {
-			if ($permission['allowed'] && $permission['name'] === $requestedPermissionName) {
-				return true;
-			} elseif (!$permission['allowed'] && $permission['name'] === $requestedPermissionName) {
-				return false;
+			if ($request === $permission['name']) {
+				return $permission;
 			}
 		}
 
-		// Roles permissions
+		// Then with roles
 		$permissions = filter(function ($permission) {
 			return $permission['role'] !== null;
 		}, $this->permissions);
 
 		foreach ($permissions as $permission) {
-			if ($permission['allowed'] && $permission['name'] === $requestedPermissionName) {
-				return true;
-			} elseif (!$permission['allowed'] && $permission['name'] === $requestedPermissionName) {
-				return false;
+			if ($request === $permission['name']) {
+				return $permission;
+			}
+		}
+
+		return null;
+	}
+
+	public function can($request) {
+		// Match with closest matching rule possible
+		while (!empty($request)) {
+			$match = $this->__findMatch($request);
+
+			if ($match) {
+				return $match['allowed'];
+			}
+
+			if (substr($request, -1) === '*') {
+				$request = substr($request, 0, -2);
+			}
+
+			if (!empty($request)) {
+				$request = explode('.', $request);
+				array_pop($request);
+				$request = implode('.', $request) . '.*';
 			}
 		}
 

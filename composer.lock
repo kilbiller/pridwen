@@ -1,0 +1,145 @@
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+        "This file is @generated automatically"
+    ],
+    "content-hash": "377daf92f306fb592e14292e94412c9d",
+    "packages": [
+        {
+            "name": "kilbiller/fphp",
+            "version": "v0.0.10",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/kilbiller/fphp.git",
+                "reference": "6d88feab0b116e0029204cc52e734a7b8f229940"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/kilbiller/fphp/zipball/6d88feab0b116e0029204cc52e734a7b8f229940",
+                "reference": "6d88feab0b116e0029204cc52e734a7b8f229940",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.0"
+            },
+            "require-dev": {
+                "kahlan/kahlan": "^3.1"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "fphp\\": "src/"
+                },
+                "files": [
+                    "src/utils/reflexify.php",
+                    "src/compose.php",
+                    "src/concat.php",
+                    "src/curry.php",
+                    "src/curryN.php",
+                    "src/every.php",
+                    "src/filter.php",
+                    "src/find.php",
+                    "src/first.php",
+                    "src/flatMap.php",
+                    "src/flatten.php",
+                    "src/flip.php",
+                    "src/flow.php",
+                    "src/identity.php",
+                    "src/includes.php",
+                    "src/join.php",
+                    "src/last.php",
+                    "src/map.php",
+                    "src/negate.php",
+                    "src/none.php",
+                    "src/not.php",
+                    "src/prop.php",
+                    "src/reduce.php",
+                    "src/reject.php",
+                    "src/reverse.php",
+                    "src/some.php",
+                    "src/uniq.php",
+                    "src/uniqWith.php",
+                    "src/zip.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Rémy Peru",
+                    "email": "peru.remy@gmail.com"
+                }
+            ],
+            "description": "A set of auto-curried immutable data-last functions for PHP. Inspired by lodash/fp.",
+            "time": "2017-05-16T17:26:29+00:00"
+        }
+    ],
+    "packages-dev": [
+        {
+            "name": "kahlan/kahlan",
+            "version": "3.1.14",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/kahlan/kahlan.git",
+                "reference": "ac57e507607e3379c35d517e22573e61e826e98b"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/kahlan/kahlan/zipball/ac57e507607e3379c35d517e22573e61e826e98b",
+                "reference": "ac57e507607e3379c35d517e22573e61e826e98b",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.4"
+            },
+            "require-dev": {
+                "squizlabs/php_codesniffer": "^2.7"
+            },
+            "bin": [
+                "bin/kahlan"
+            ],
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Kahlan\\": "src/"
+                },
+                "files": [
+                    "src/functions.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "CrysaLEAD"
+                }
+            ],
+            "description": "The PHP Test Framework for Freedom, Truth and Justice.",
+            "keywords": [
+                "BDD",
+                "Behavior-Driven Development",
+                "Monkey Patching",
+                "TDD",
+                "mock",
+                "stub",
+                "testing",
+                "unit test"
+            ],
+            "time": "2017-04-12T13:22:10+00:00"
+        }
+    ],
+    "aliases": [],
+    "minimum-stability": "stable",
+    "stability-flags": [],
+    "prefer-stable": false,
+    "prefer-lowest": false,
+    "platform": {
+        "php": ">=7.0"
+    },
+    "platform-dev": []
+}

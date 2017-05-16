@@ -1,0 +1,16 @@
+machine:
+  php:
+    version: 7.0.17
+
+dependencies:
+  override:
+    - composer install --no-interaction
+  cache_directories:
+    - vendor
+
+test:
+  override:
+    - composer --version
+    - composer run test:coverage
+  post:
+    - bash <(curl -s https://codecov.io/bash) -t f4e20928-b61a-4e65-8db3-c8e783fda6db

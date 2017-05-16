@@ -10,7 +10,8 @@
         }
     ],
     "require": {
-		"php": ">=7.0"
+		"php": ">=7.0",
+        "kilbiller/fphp": "^0.0.10"
 	},
 	"require-dev": {
 		"kahlan/kahlan": "^3.1"

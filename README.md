@@ -6,3 +6,10 @@
 Simple authorization library.
 
 Requires php >= 7.0
+
+## API
+
+- Auth::setPermissions(array): void
+- Auth::retrieveCredentials(closure): void
+- Auth::getLoggedUser(): AuthUser
+- AuthUser->can(string): boolean

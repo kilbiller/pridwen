@@ -4,13 +4,13 @@ namespace Pridwen;
 
 use function fphp\{prop, concat, reduce, filter};
 
-class UserAuth {
+class AuthUser {
 	public $id = null;
 	public $roles = [];
 	public $permissions = [];
 
 	function __construct($permissions, $user) {
-		$this->id = prop('user_id', $user);
+		$this->id = prop('id', $user);
 		$this->roles = prop('roles', $user) ?? [];
 		$this->permissions = $this->__computePermissions($permissions);
 	}

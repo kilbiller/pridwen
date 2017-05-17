@@ -17,11 +17,11 @@ class Auth {
 		self::$__retrieveCredentials = $callback;
 	}
 
-	public static function findById($id) {
+	public static function getLoggedUser() {
 		$callable = self::$__retrieveCredentials;
-		$userData = $callable($id);
+		$userData = $callable();
 
-		return new UserAuth(self::$__permissions, $userData);
+		return new AuthUser(self::$__permissions, $userData);
 	}
 }
 

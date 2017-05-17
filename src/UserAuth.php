@@ -2,7 +2,7 @@
 
 namespace Pridwen;
 
-use fphp\{prop, concat, reduce, filter};
+use function fphp\{prop, concat, reduce, filter};
 
 class UserAuth {
 	public $id = null;

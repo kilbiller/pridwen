@@ -2,7 +2,7 @@
 
 namespace Pridwen;
 
-use fphp\{prop, concat};
+use function fphp\{prop, concat};
 
 class Auth {
 	private static $__permissions = [];
